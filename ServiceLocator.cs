@@ -39,5 +39,10 @@ namespace GHSoftware
                 throw new NotImplementedException("Service not available: " + ex.Message);
             }
         }
+
+        internal Lazy<T> GetLazy<T>()
+        {
+            return new Lazy<T>(Get<T>);
+        }
     }
 }
